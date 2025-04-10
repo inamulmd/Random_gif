@@ -2,12 +2,14 @@ import React , { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
 import Spinner from './Spinner'
+import useGif from '../hooks/useGif'
 
 const API_KEY = import.meta.env.VITE_GIPHY_API_KEY
 const Tag = () => {
    
     const [tag ,setTag] = useState("car");
    
+    const {gif, loading, fetchData} = useGif(tag);
 
     function clickHandler(){
         console.log("clcicked");
